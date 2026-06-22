@@ -45,7 +45,7 @@ class Membre
 
     public function setPseudo(string $pseudo): void
     {
-      if (strlen($pseudo) < 3 || strlen($pseudo) > 20) {
+      if (strlen($pseudo) < 3 || iconv_strlen($pseudo) > 20) {
           echo "Erreur";
       } else {
           $this->pseudo = $pseudo;
