@@ -67,11 +67,10 @@ class CompteBancaire
 
     public function retirer(float $montant): void
     {
-        // ERREUR VOLONTAIRE : mauvaise condition
         if ($montant = $this->solde) {
             $this->solde -= $montant;
         } else {
-            echo "Solde insuffisant.<br>";
+            echo "Solde insuffisant.";
         }
     }
 }
