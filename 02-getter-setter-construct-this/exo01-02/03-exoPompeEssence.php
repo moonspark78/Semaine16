@@ -59,7 +59,7 @@ class Pompe
     {
         $this->litresStock = $litres;
     }
-
+    
     public function getLitresStock(): int
     {
         return $this->litresStock;
@@ -69,7 +69,6 @@ class Pompe
     {
         try {
             $vehicule->setLitresReservoir(50);
-
             $this->litresStock = $this->litresStock;
         } catch (Exception $e) {
             echo "Erreur";
