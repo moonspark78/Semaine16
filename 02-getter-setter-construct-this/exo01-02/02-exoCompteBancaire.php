@@ -23,13 +23,12 @@ EXERCICE :
 
 */
 
-
 class CompteBancaire
 {
     private string $titulaire;
     private float $solde;
 
-    public function __construct(string $titulaire, float $solde)
+    public function construct(string $titulaire, float $solde)
     {
         $this->titulaire = $titulaire;
         $this->solde = $solde;
@@ -62,15 +61,17 @@ class CompteBancaire
 
     public function deposer(float $montant): void
     {
-        $this->solde += $montant;
+        if ($montant > 0) {
+            $this->setSolde($this->solde + $montant);
+        }
     }
 
     public function retirer(float $montant): void
     {
-        if ($montant = $this->solde) {
-            $this->solde -= $montant;
+        if ($montant > 0 && $montant <= $this->solde) {
+            $this->setSolde($this->solde - $montant);
         } else {
-            echo "Solde insuffisant.";
+            echo "Impossible";
         }
     }
 }
