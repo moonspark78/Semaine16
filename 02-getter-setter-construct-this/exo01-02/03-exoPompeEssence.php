@@ -49,11 +49,6 @@ class Vehicule
     }
 }
 
-
-
-
-
-
 class Pompe
 {
     private int $litresStock;
@@ -63,7 +58,6 @@ class Pompe
         $this->litresStock = $litres;
     }
 
-
     public function getLitresStock(): int
     {
         return $this->litresStock;
@@ -71,19 +65,20 @@ class Pompe
 
     public function donnerEssence(Vehicule $vehicule): void
     {
-        try {
+        $manque = 50 - $vehicule->getLitresReservoir();
+        if ($this->litresStock == 0) {
+            echo "La pompe est vide";
 
-            if ($this->litresStock < 50) {
-                throw new Exception("Pas assez d'essence");
-            }
-
+        } elseif ($this->litresStock >= $manque) {
             $vehicule->setLitresReservoir(50);
-            $this->litresStock -= 50;
+            $this->litresStock -= $manque;
 
-        } catch (Exception $e) {
-            echo $e->getMessage();
+        } else {
+            $vehicule->setLitresReservoir(
+                $vehicule->getLitresReservoir() + $this->litresStock
+            );
+            $this->litresStock = 0;
         }
     }
 }
-
 ?>
