@@ -68,10 +68,8 @@ class Pompe
     public function donnerEssence(Vehicule $vehicule): void
     {
         try {
-            // ERREUR 1 : pas de vérification du stock
             $vehicule->setLitresReservoir(50);
 
-            // ERREUR 2 : mauvais calcul logique (on enlève rien correctement)
             $this->litresStock = $this->litresStock;
         } catch (Exception $e) {
             echo "Erreur";
