@@ -63,6 +63,7 @@ class Pompe
         $this->litresStock = $litres;
     }
 
+
     public function getLitresStock(): int
     {
         return $this->litresStock;
