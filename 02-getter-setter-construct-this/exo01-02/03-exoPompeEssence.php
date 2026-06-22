@@ -29,8 +29,6 @@
             - Le réservoir d'un véhicule contient maximum 50 litres (les voitures ont toutes le meme reservoir)
             - La méthode donnerEssence() distribue automatiquement si elle le peut ! le plein (50litres) à la voiture  (c'est à dire on ne laisse pas la possibilité au user de choisir le nombre de litres qu'il veut)
             - Gérez les exceptions qui peuvent être rencontrées à l'appel de la méthode donnerEssence()
-
-
  */
 
 
@@ -59,7 +57,7 @@ class Pompe
     {
         $this->litresStock = $litres;
     }
-    
+
     public function getLitresStock(): int
     {
         return $this->litresStock;
