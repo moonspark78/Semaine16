@@ -16,7 +16,7 @@ Objectif : Créer un système simple de gestion de panier avec une classe Panier
 
         */
 
-        
+
 
 class Config
 {
@@ -25,7 +25,6 @@ class Config
     public static $settings = [
         "debug" => true,
         "db_url" => "localhost",
-        "theme" => "dark"
     ];
 
     public static function setSetting($key, $value)
