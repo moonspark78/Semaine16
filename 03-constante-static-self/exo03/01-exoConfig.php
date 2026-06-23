@@ -18,26 +18,24 @@ Objectif : Créer une classe Config pour gérer la configuration générale d'un
 */
 
 
-
 class Config
 {
     const APP_NAME = "MonApplication";
-
     public static $settings = [
         "debug" => true,
         "db_url" => "localhost",
     ];
-
     public static function setSetting($key, $value)
     {
         self::$settings[$key] = $value;
     }
-
     public static function getSetting($key)
     {
-        return self::$settings[$key];
+        if (isset(self::$settings[$key])) {
+            return self::$settings[$key];
+        }
+        return null;
     }
-
     public static function getAppName()
     {
         return self::APP_NAME;
