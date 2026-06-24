@@ -35,6 +35,28 @@ class Vehicule
     }
 }
 
-class Peugeot {}
+class Peugeot extends Vehicule
+{
+    public function carburant()
+    {
+        return "essence";
+    }
 
-class Renault {}
+    public function nombreDeTestObligatoire()
+    {
+        return 170;
+    }
+}
+
+class Renault extends Vehicule
+{
+    public function carburant()
+    {
+        return "diesel";
+    }
+
+    public function nombreDeTestObligatoire()
+    {
+        return 130;
+    }
+}
