@@ -16,22 +16,19 @@
 
 
 
-class Vehicule
+abstract class Vehicule
 {
-
     public function demarrer()
     {
-        return 'je démarre';
+     return 'je démarre';
     }
-
     public function carburant()
     {
-        return "essence ? ou diesel ?";
+     return "essence ? ou diesel ?";
     }
-
     public function nombreDeTestObligatoire()
     {
-        return 100;
+     return 100;
     }
 }
 
@@ -39,12 +36,11 @@ class Peugeot extends Vehicule
 {
     public function carburant()
     {
-        return "essence";
+     return "essence";
     }
-
     public function nombreDeTestObligatoire()
     {
-        return 170;
+     return 170;
     }
 }
 
@@ -52,11 +48,21 @@ class Renault extends Vehicule
 {
     public function carburant()
     {
-        return "diesel";
+     return "diesel";
     }
 
     public function nombreDeTestObligatoire()
     {
-        return 130;
+     return 130;
     }
 }
+
+$peugeot = new Peugeot();
+$renault = new Renault();
+
+
+echo $peugeot->demarrer();
+echo $peugeot->carburant();
+
+echo $renault->demarrer();
+echo $renault->carburant();
