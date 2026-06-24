@@ -25,11 +25,7 @@ class Animal
 
 class Oiseau extends Animal 
 {
-    public function seDeplacer() // On redéfinit la méthode seDeplacer, on est en train de mettre en place une surcharge/override 
-    {
-        echo "$this->nom vole dans les airs.<br>"; // On écrase en fait la méthode d'origine pour appliquer un nouveau traitement 
-        // echo parent::seDeplacer(); // Il nous est toujours possible de réatteindre la méthode parent grâce à la syntaxe parent::seDeplacer();
-    }
+    // La méthode seDeplacer() ne peut pas être surchargée ici si elle est déclarée final dans la classe parent.
 }
 
 $oiseau1 = new Oiseau("Yuzo");
