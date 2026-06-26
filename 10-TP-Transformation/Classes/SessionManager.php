@@ -2,27 +2,18 @@
 
 class SessionManager
 {
-    public static function start(): void
+    public static function start()
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+        session_start();
     }
 
-    public static function set(
-        string $key,
-        mixed $value
-    ): void {
+    public static function set($key, $value)
+    {
         $_SESSION[$key] = $value;
     }
 
-    public static function get(string $key): mixed
+    public static function get($key)
     {
         return $_SESSION[$key] ?? null;
-    }
-
-    public static function remove(string $key): void
-    {
-        unset($_SESSION[$key]);
     }
 }
