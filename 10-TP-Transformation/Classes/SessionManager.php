@@ -7,13 +7,13 @@ class SessionManager
         session_start();
     }
 
-    public static function setUser($user)
+    public static function set($key, $value)
     {
-        $_SESSION["connected_user"] = $user;
+        $_SESSION[$key] = $value;
     }
 
-    public static function getUser()
+    public static function get($key)
     {
-        return $_SESSION["connected_user"] ?? null;
+        return $_SESSION[$key] ?? null;
     }
 }
