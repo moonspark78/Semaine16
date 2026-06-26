@@ -21,21 +21,21 @@ class User
 
     public function getPseudo(): string
     {
-        return $this->pseudo;
+     return $this->pseudo;
     }
 
     public function getEmail(): string
     {
-        return $this->email;
+     return $this->email;
     }
 
     public function getPassword(): string
     {
-        return $this->password;
+     return $this->password;
     }
 
     public function getRole(): string
     {
-        return $this->role;
+      return $this->role;
     }
 }
