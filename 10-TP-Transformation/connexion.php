@@ -9,26 +9,19 @@ $userRepo = new UserRepository($db->getPdo());
 
 $error = "";
 $success = "";
-
 $pseudoValue = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $pseudo = trim($_POST["pseudo"]);
     $password = trim($_POST["password"]);
-
     $pseudoValue = $pseudo;
-
     $user = $userRepo->findByPseudo($pseudo);
 
     if ($user && password_verify($password, $user["password"])) {
-
         unset($user["password"]);
-
         SessionManager::set("connected_user", $user);
-
         $success = "Connexion réussie";
-
     } else {
         $error = "Pseudo ou mot de passe incorrect";
     }
@@ -60,20 +53,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php endif; ?>
 
         <form method="post">
-
             <div class="mb-3">
                 <label>Pseudo</label>
                 <input type="text" name="pseudo" class="form-control"
                        value="<?= htmlspecialchars($pseudoValue) ?>">
             </div>
-
             <div class="mb-3">
                 <label>Mot de passe</label>
                 <input type="password" name="password" class="form-control">
             </div>
-
             <button class="btn btn-success">Se connecter</button>
-
         </form>
 
     </div>
