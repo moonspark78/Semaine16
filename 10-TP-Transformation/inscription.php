@@ -15,7 +15,7 @@ $userRepo = new UserRepository($db->getPdo());
 $errors = [];
 $success = "";
 
-// pour garder les valeurs si erreur
+
 $pseudoValue = "";
 $emailValue = "";
 
