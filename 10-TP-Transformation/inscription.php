@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $success = "Inscription réussie ! Vous pouvez vous connecter.";
         
-        // reset champs
+        
         $pseudoValue = "";
         $emailValue = "";
     }
